@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JSOS - A fully functional JavaScript operating system with BIOS, virtual filesystem, and persistent storage">
+    <meta name="keywords" content="javascript, operating system, browser os, virtual filesystem, terminal, BIOS">
+    <meta name="author" content="JSOS Contributors">
+    <title>JSOS - JavaScript Operating System</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f4c75'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>J</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        /* Hide scrollbars while keeping scroll functionality */
+        .terminal::-webkit-scrollbar,
+        .terminal-output::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        .terminal,
+        .terminal-output {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Core Kernel -->
+    <script src="core/kernel/events.js"></script>
+    <script src="core/kernel/memory.js"></script>
+    <script src="core/kernel/scheduler.js"></script>
+    <script src="core/kernel/process.js"></script>
+    <script src="core/kernel/bootstrap.js"></script>
+    
+    <!-- Firmware -->
+    <script src="core/firmware/bios.js"></script>
+    <script src="core/firmware/bootloader.js"></script>
+    
+    <!-- Hardware -->
+    <script src="core/hardware/detection.js"></script>
+    
+    <!-- Filesystem -->
+    <script src="core/filesystem/indexeddb-driver.js"></script>
+    <script src="core/filesystem/vfs.js"></script>
+    
+    <!-- Drivers -->
+    <script src="core/drivers/display.js"></script>
+    <script src="core/drivers/input.js"></script>
+    <script src="core/drivers/audio.js"></script>
+    
+    <!-- Terminal UI -->
+    <script src="ui/terminal.js"></script>
+    <script src="core/boot-manager.js"></script>
+    
+    <!-- Main App -->
+    <script src="main.js"></script>
+</body>
+</html>
+</html>
