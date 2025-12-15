@@ -7,8 +7,6 @@ JSOS is a browser-based operating system written in vanilla JavaScript. It boots
 1. Download or clone this repository.
 2. Open `index.html` in a modern browser.
 
-That’s it.
-
 ## Requirements
 
 - Modern browser with ES6 support (Chrome/Edge 90+, Firefox 88+, Safari 14+)
