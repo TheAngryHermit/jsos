@@ -1,74 +1,73 @@
 # JSOS
 
-A real operating system built in JavaScript that runs in your browser.
+JSOS is a browser‑based operating system implemented in vanilla JavaScript. It includes a BIOS setup screen, a virtual filesystem with persistence, a Unix‑style terminal, and basic process and memory management — all running entirely in the browser with no build step or external dependencies.
 
-Boot it up. Use it. Create files. Configure BIOS. It all persists.
+Read the full documentation in the Wiki: https://github.com/TheAngryHermit/jsos/wiki
 
-**[→ Full Documentation in Wiki](https://github.com/TheAngryHermit/jsos/wiki)**
+## Overview
 
-## What You Get
+JSOS boots through a POST→BIOS→Bootloader→Kernel sequence and drops you into a terminal. Files you create and settings you change are saved automatically and restored on the next visit.
 
-- **Actual BIOS** - Press F2 to configure boot order, secure boot, virtualization, SATA mode. Changes stick.
-- **Real File System** - mkdir, rm, cp, mv, cat. Your files don't disappear when you refresh.
-- **Unix Terminal** - Full command line. History. Navigation. Just like a real OS.
-- **Process Scheduler** - Multiple processes running. Memory management. Real scheduling.
-- **Persistent Storage** - Everything saves to localStorage. Close the tab, come back later, it's all there.
+## Key Features
 
-## Start Here
+- BIOS setup with configurable boot order, secure boot, virtualization, and SATA mode (press F2 during boot)
+- Persistent virtual filesystem with standard operations (mkdir, rm, cp, mv, cat, tree)
+- Terminal with command history, navigation (`cd`, `pwd`, `ls`), and helpful system commands
+- Process scheduler and memory subsystem with simple usage reporting
+- Zero setup: open `index.html` in a modern browser and start using it
 
-```
-1. Open index.html
-2. Watch it boot
-3. Press F2 for BIOS (optional)
-4. Type help
-```
+## Getting Started
 
-That's it. No build step. No dependencies. Just open it.
+1. Open `index.html` in your browser.
+2. Watch the boot sequence complete.
+3. (Optional) Press F2 during boot to open BIOS Setup and change settings.
+4. At the terminal prompt, type `help` to see available commands.
 
-## Quick Commands
+## Usage Highlights
 
+Files and directories:
 ```bash
-# Files
 mkdir projects
-touch projects/idea.txt
-cat projects/idea.txt
-cp projects/idea.txt /tmp/backup.txt
+touch projects/notes.txt
+cat projects/notes.txt
+cp projects/notes.txt /tmp/backup.txt
 mv /tmp/backup.txt /home/
+rm /home/backup.txt
+tree
+```
 
-# Navigation
+Navigation and system info:
+```bash
 cd /home
 pwd
 ls
-tree
-
-# System
 memory
 ps
 uname
-
-# Reset everything
-reset
 ```
 
-## Why This Works
+Persistence and reset:
+```bash
+reset   # type "yes" to confirm; restores defaults
+```
 
-Pure vanilla JavaScript. No webpack, no npm, no bullshit. Just classes and events. The whole OS loads in seconds.
+## Persistence
 
-It's not pretending to be an OS. It has a real boot sequence. Real BIOS settings that actually change behavior. Real file operations that persist. Real process scheduling.
+JSOS stores the entire filesystem and BIOS settings in the browser using LocalStorage. Your data is restored automatically on reload. Storage limits vary by browser (typically 5–10MB).
 
-## Browser Support
+## Compatibility
 
-Chrome 90+, Firefox 88+, Safari 14+. Anything with ES6 and localStorage.
+Works on current versions of Chrome/Edge, Firefox, and Safari. Requires ES6 features and access to LocalStorage and IndexedDB.
 
-## More Details
+## Learn More
 
-See the **[Wiki](https://github.com/TheAngryHermit/jsos/wiki)** for:
-- Complete terminal command reference
+The Wiki covers details, including:
+- Terminal command reference
 - BIOS configuration guide
-- Filesystem structure
-- Architecture breakdown
-- How to extend it
+- Filesystem layout
+- Architecture overview
+- Extending JSOS
 
-## Made In
+---
 
-Vanilla JavaScript. No frameworks. No build process. That's the point.
+Built with vanilla JavaScript for clarity and approachability. Open `index.html` and explore.
