@@ -17,5 +17,5 @@ Or launch the hosted build: https://theangryhermit.github.io/jsos
 
 ## Documentation
 
-Full documentation is available in the Wiki:
+(WIP!!!!) Full documentation is available in the Wiki:
 https://github.com/TheAngryHermit/jsos/wiki
