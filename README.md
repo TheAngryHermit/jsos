@@ -7,7 +7,7 @@ JSOS is a browser-based operating system written in vanilla JavaScript. It boots
 1. Download or clone this repository.
 2. Open `index.html` in a modern browser.
 
-That’s it.
+Or launch the hosted build: https://theangryhermit.github.io/jsos
 
 ## Requirements
 
