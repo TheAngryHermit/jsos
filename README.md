@@ -11,57 +11,33 @@ JSOS boots through a POST→BIOS→Bootloader→Kernel sequence and drops you in
 ## Key Features
 
 - BIOS setup with configurable boot order, secure boot, virtualization, and SATA mode (press F2 during boot)
-- Persistent virtual filesystem with standard operations (mkdir, rm, cp, mv, cat, tree)
-- Terminal with command history, navigation (`cd`, `pwd`, `ls`), and helpful system commands
-- Process scheduler and memory subsystem with simple usage reporting
-- Zero setup: open `index.html` in a modern browser and start using it
+- Persistent virtual filesystem with standard operations
+- Terminal with command history, navigation, and system utilities
+- Process scheduler and memory subsystem with usage reporting
+- Open `index.html` in a modern browser to run JSOS
 
 ## Getting Started
 
 1. Open `index.html` in your browser.
 2. Watch the boot sequence complete.
 3. (Optional) Press F2 during boot to open BIOS Setup and change settings.
-4. At the terminal prompt, type `help` to see available commands.
+4. See the Wiki for terminal usage and command reference.
 
-## Usage Highlights
+## Usage
 
-Files and directories:
-```bash
-mkdir projects
-touch projects/notes.txt
-cat projects/notes.txt
-cp projects/notes.txt /tmp/backup.txt
-mv /tmp/backup.txt /home/
-rm /home/backup.txt
-tree
-```
-
-Navigation and system info:
-```bash
-cd /home
-pwd
-ls
-memory
-ps
-uname
-```
-
-Persistence and reset:
-```bash
-reset   # type "yes" to confirm; restores defaults
-```
+Refer to the Wiki for examples of navigation, file operations, and system controls.
 
 ## Persistence
 
-JSOS stores the entire filesystem and BIOS settings in the browser using LocalStorage. Your data is restored automatically on reload. Storage limits vary by browser (typically 5–10MB).
+JSOS stores the filesystem and BIOS settings in the browser using LocalStorage. Data is restored automatically on reload. Storage limits vary by browser (typically 5–10MB).
 
 ## Compatibility
 
-Works on current versions of Chrome/Edge, Firefox, and Safari. Requires ES6 features and access to LocalStorage and IndexedDB.
+Tested on current versions of Chrome/Edge, Firefox, and Safari. Requires ES6 features and access to LocalStorage and IndexedDB.
 
 ## Learn More
 
-The Wiki covers details, including:
+See the Wiki for:
 - Terminal command reference
 - BIOS configuration guide
 - Filesystem layout
@@ -70,4 +46,4 @@ The Wiki covers details, including:
 
 ---
 
-Built with vanilla JavaScript for clarity and approachability. Open `index.html` and explore.
+Built with vanilla JavaScript. Open `index.html` to run.
